@@ -1,6 +1,14 @@
 import React from 'react';
+import { useParams } from 'react-router-dom';
+import { deleteMovie, getMovies } from '../actions/movies';
 
 const DeleteMovieModal = () => {
+  const {id} = useParams();
+
+  const deleteMovieItem = (id) => {
+    deleteMovie(id);
+  }
+
   return (<div id="deleteEmployeeModal">
     <div className="modal-dialog">
       <div className="modal-content">
